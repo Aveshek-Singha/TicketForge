@@ -4,7 +4,7 @@
 The upfront grill is closed as D-104. Use ask-matt: to-spec, to-tickets, then implement each unblocked ticket in a fresh context with TDD and Standards/Spec review.
 PRD: [GitHub #1](https://github.com/Aveshek-Singha/TicketForge/issues/1). The [build spec](BUILD_SPEC.md) synthesizes the approved package.
 All 24 tickets exist with native GitHub blocking links. The parent PRD remains open. No required ticket has been declared complete.
-BK-001 is assigned and in progress. No application service or native correctness, provider, load, physical-recovery or production-readiness result is claimed.
+Draft bootstrap [PR #26](https://github.com/Aveshek-Singha/TicketForge/pull/26) preserves reviewed partial progress. BK-001 is assigned and in progress. No application service or native correctness, provider, load, physical-recovery or production-readiness result is claimed.
 
 ## Foundation and scarce-seat path
 | Work | Ticket | State | Blocked by BK |
