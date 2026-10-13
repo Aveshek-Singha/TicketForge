@@ -1,0 +1,5 @@
+# Measure notification readiness and bound mail recovery without hiding free limits
+
+Status: Accepted. Date: 2026-10-12. Decision: D-089. Objectives and retry/share profiles are selected; proof publication, transport, actual tenancy quotas and capacity remain unproved.
+
+Notification measures durable intent, private feed visibility and relay acceptance separately with original-source 2/5/10/30-second objectives, extends owner-certified private feed coverage and isolates finite security/business mail shares from accepted finance and gate work. Conservative bounded submission retry preserves unknown recipient bindings and original Auth expiry, while staged steady/peak and pre-submission recovery tests count useful outcomes, captured duplicates and missed deadlines rather than clearing unknown work to claim catch-up. Review 089 keeps protected Mailpit plus private in-app history as the free test deployment and preserves Internet delivery as a production requirement, documenting Oracle's 3,000/month versus zero/day inconsistency and outbound port-25 restriction until actual tenancy evidence is available.

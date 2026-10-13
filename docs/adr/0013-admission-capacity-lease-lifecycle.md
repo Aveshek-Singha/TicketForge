@@ -1,0 +1,5 @@
+# Account for admission capacity through the checkout lifecycle
+
+Status: Accepted. Date: 2026-10-10. Decision: D-013.
+
+Bound both new-admission rate and active checkout slots per event occurrence and globally. Issue an account/event-bound admission lease with a fixed bounded window to begin checkout; retries reuse the lease rather than consuming another slot. Keep its slot counted while a claim, unknown allocation outcome, active hold, or payment reservation can consume it; credential expiry alone cannot release capacity. Reclaim an unused lease only with safe evidence that no allocation can still consume it, and release terminal workflow slots through guarded, idempotent accounting after reconciling authoritative allocation state. Retired leases cannot authorize new allocation; a new purchase requires fresh admission under FIFO and future quota rules, while payment reconciliation and compensation continue on their separate reserved budget. Conservative accounting reduces throughput during uncertainty; claim protocol, storage, fencing, deadlines, sizing, and hold-conflict retry behavior remain unresolved.

@@ -1,0 +1,5 @@
+# Set local payment journey targets and isolate supplemental provider tests
+
+Status: Accepted. Date: 2026-10-11. Decision: D-069. Supplements D-005 and D-035; sandbox integration remains required.
+
+Keep actual SSLCOMMERZ sandbox contract tests separate from high-volume local tests, with an initial aggregate sandbox budget of one client request per second and one active client HTTP call per merchant/environment, without assuming a provider quota or safe monetary replay. Accept an isolated deterministic provider test double through the normal adapter and verification path, with synthetic money, no external payment egress or real credentials, and rejection of test adapters/evidence in sandbox or live deployments. Require separate local acceptance, conversion, dispatch, durable callback and confirmation objectives plus distinct useful throughput floors described in D-069 and Review 069; original deadlines, owner proofs and recovery remain mandatory, and simulation cannot establish provider capacity, settlement or production readiness.

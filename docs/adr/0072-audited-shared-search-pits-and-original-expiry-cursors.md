@@ -1,0 +1,5 @@
+# Audit shared search PITs and preserve original cursor expiry
+
+Status: Accepted. Date: 2026-10-11. Decision: D-072. Audit cost, pinned-version behavior and capacity remain unproved.
+
+A stable search reader can still omit owner changes, so verify each shared Elasticsearch PIT's complete visible public documents against an independently built owner-complete catalog cut before enrolling it, with full canonical readback and explicit tombstones. Initially attempt coalesced cuts every five seconds with a ten-second source-to-ready budget and a global pool of at most eight candidate, serving, retiring or unresolved PITs per catalog generation; new readers need certification, while documented concurrent ID updates preserve the same view. Bind bounded search_after cursors and caches to that certified view and original thirty-second source expiry, rejecting incomplete results and accounting for platform failures; D-072 and Review 072 define authority, visibility invalidation, lifecycle limits and validation without assuming incremental audit skipping or per-user contexts.

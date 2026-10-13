@@ -1,0 +1,5 @@
+# Compact presence receipts behind durable cumulative replay guards
+
+Status: Accepted. Date: 2026-10-11. Decision: D-063. Replaces only presence-renewal receipt history inherited from D-043/D-062. Pure presence projection delivery is specialized by [D-064](0064-coalesced-presence-projection-and-immutable-lifecycle-events.md); critical event history remains unchanged.
+
+Individual pulse receipts grow with every renewal, but age-based deletion can let delayed requests renew presence again. For Queue Presence only, keep the highest accepted scoped sequence and latest payload-bound receipt/deadline under durable owner guards; accept only the next sequence, replay matching latest requests without extending time and reject older requests as superseded. Keep active and retired lifecycle fences, preserve acknowledged progress through ordinary failover and require a reconciled fresh recovery generation after rollback restore. Other command receipts, critical event history and unpublished work retain their existing contracts; see D-063 and Review 063 for concurrency, missing/overflow guards, lost history and unproved capacity.

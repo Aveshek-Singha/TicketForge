@@ -1,0 +1,5 @@
+# Recover one lost site through prepared and fenced survivor authority
+
+Status: Accepted. Date: 2026-10-13. Decision: D-102. Closeout round 1 is complete; implementation, infrastructure evidence and measured recovery remain unproved.
+
+Amend D-101 only for one declared site loss: verify both surviving journals and native control majority, obtain D-036 approval for an exact recovery plan, and durably prepare that plan at both survivors before any physical action. Fence every possible predecessor under D-094, retain original phase IDs and uncertainty, then conditionally advance generation and journal the outcome before protected promotion with complete history, a synchronous follower and D-097 remote durability. Retain native etcd quorum/reconfiguration rules and quarantine the absent or returning site until verified rebuild and re-enrollment; restore three independent journal copies before ordinary administration resumes, and count missing proofs or compound losses as recovery/SLO failures without weakening original requirements.

@@ -1,0 +1,5 @@
+# Certify Auth observations while keeping credential grants primary-owned
+
+Status: Accepted. Date: 2026-10-12. Decision: D-091. Source coverage, profiles, recovery and capacity remain unproved.
+
+Fresh signatures over stale projections cannot establish current authority, so Auth retains cohesive account/contact/session/factor guards in its own logical primary database and extends D-076 complete baseline/change/control certification to non-secret authority images. Only the authorized issuer derives bounded scope-bound Session Authority Proofs from verified cuts with the original observation age; resource owners independently check exact bindings, current controls and conservative expiry after waits, while credential grants, refresh and recovery remain durable primary mutations. An exact committed Auth command may supply its original guarded observation only within an independently safe unfenced source generation, without renewing age, proving complete absence or redelivering consumed credentials; Review 091 preserves dedicated production Auth HA, strict assurance and all original workload/SLO targets without claiming measured scalability.

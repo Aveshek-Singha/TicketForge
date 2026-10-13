@@ -1,0 +1,7 @@
+# Separate active-session capacity from fresh authentication and abuse work
+
+Status: Accepted. Date: 2026-10-12. Decision: D-090. Workload, latency and initial throttling profiles are selected; proof publication, enforcement and capacity remain unproved.
+
+One million active sessions require useful current authority and durable strict refresh rather than signature-only benchmarks, so Review 090 targets 50,000 valid proof deliveries/s and 5,000 rotations/s for thirty minutes alongside all original workloads, with separate login/onboarding/security-operation floors and phase-specific latency objectives. Protected existing-session, revocation and recovery shares cannot be borrowed by unauthenticated KDF traffic; preserve Argon2/MFA strength, fixed authority/session ages and account/factor counters across new request IDs while counting legitimate overload failures. Shared-network and finite malicious-offer tests expose false denial and budget starvation without promising unlimited DDoS resistance or proven free infrastructure capacity.
+
+Scoped follow-up: [D-092](0092-durable-auth-attempt-budgets-and-physical-resource-fencing.md) defines rolling durable attempt guards, conservative pending/execution-age charges and finite physically fenced resource shares. Cache rollback, timeout and changed request/challenge identity cannot restore guessing allowance; safe reopening and all original workload/recovery targets remain subject to measured proof.

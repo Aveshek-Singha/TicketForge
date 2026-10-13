@@ -1,0 +1,9 @@
+# Verify synchronous commits and gate recovered external effects with logged writes
+
+Status: Accepted. Date: 2026-10-11. Decision: D-032.
+
+Critical commits require verified synchronous completion under strict HA/storage settings, with cancellation, interrupted-wait warnings, and connection failures treated as unknown; the original caller may use a verified business commit, while recovered results and background dispatch require revalidation and a real persistent logged write in the same owner-local guarded transaction/session followed by verified synchronous COMMIT. The later-write barrier relies on ordered WAL within D-031 safe leadership/history and needs version/driver-specific failure tests; local row visibility, ready flags, read-only/no-work/unlogged writes, and unrelated-history LSNs do not prove it, and extra WAL/wait costs must be included in latency/capacity measurements. Preserve original identities/deadlines and terminal states, permit stable-event Outbox retries under D-024, and treat uncertain financial dispatch claims as possibly sent under D-006/D-023 rather than authorizing another provider call after worker crash or lease expiry.
+
+Scoped follow-up: [D-094](0094-patroni-etcd-independent-fencing-and-safe-write-readiness.md) adds strict Patroni configuration and complete write-readiness gates with a real logged readiness barrier. Group readiness still cannot replace each business command's verified commit or recovered-result barrier, including cancelled synchronous waits.
+
+Scoped follow-up: [D-097](0097-three-site-remote-wal-coverage-gate.md) adds a backend-pinned post-COMMIT WAL capture and two-of-three same-cohort off-region flush gate for critical phase work and exposure. It preserves this decision's local synchronous commit and unknown-outcome rules; a remote proof never authorizes a repeated business effect.

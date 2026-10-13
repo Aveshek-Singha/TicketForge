@@ -1,0 +1,7 @@
+# Own durable notices and report email delivery honestly
+
+Status: Accepted. Date: 2026-10-12. Decision: D-085. Channel authority and semantics are selected; contact routing, retry budgets, transport and capacity remain unproved or unresolved.
+
+Notification owns durable Inbox, one logical intent per exact source transition/channel and channel attempt records, with private in-app history and transactional email derived from verified owner facts without mutating booking, inventory or money. Notices state original facts and times, suppress proven obsolete unsent confirmations and link to current authorized status, accepting that already submitted mail cannot be recalled and unknown SMTP outcomes may produce duplicate copies despite stable Message-ID. Protected Mailpit validates the full free sandbox email workflow while in-app history serves account-authorized notices; production mailbox delivery remains a preserved requirement with explicitly unproved transport and deliverability.
+
+Scoped follow-up: [D-086](0086-auth-owned-contact-routing-and-fixed-security-mail-challenges.md) binds exact recipient/purpose routing and fixed Auth challenge deadlines, retaining digest-only redemption with separately protected security-mail dispatch material. This permits only the scoped Auth challenge payload, preserves secret-free business notices and existing mailbox/MFA/account guards, and never redirects possibly submitted unknown mail automatically.

@@ -1,0 +1,5 @@
+# Preserve accepted queue and lease state through single-host failure
+
+Status: Accepted. Date: 2026-10-10. Decision: D-014.
+
+Waiting Room Service owns authoritative accepted FIFO entries and admission leases in PostgreSQL, with Redis retained for fast projections and atomic coordination. Acknowledge accepted joins and admissions only after durable commits on the primary and an independent synchronous replica, preserving acknowledged state after a single-host failure when the required durable copy survives. Fence stale writers and pause admissions when authority or lease accounting is uncertain; recover accepted priority and reconcile unresolved allocation claims before reusing capacity. Redis data loss cannot justify discarding acknowledged priority or resetting active slots to zero. This introduces durable writes for million-user queue ingress, ordering contention, and replication latency; throughput requires measurement and backpressure. Physical database topology, ordering mechanism, batching, ingress SLO, recovery time, and whole-region recovery remain unresolved; document free-deployment failure domains that cannot meet this contract.

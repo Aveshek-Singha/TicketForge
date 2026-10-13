@@ -1,0 +1,5 @@
+# Use two-minute holds and five-minute payment reservations
+
+Status: Accepted. Date: 2026-10-10. Decision: D-017.
+
+Use the user's selected defaults: two minutes for an active hold from guarded Inventory creation and five minutes for a payment reservation from guarded conversion, before provider initiation. Provider initiation, customer payment, server validation, and Inventory confirmation eligibility consume the five-minute window. Store fixed deadlines and the policy version; retry, refresh, and reconnect cannot extend deadlines, and later configuration changes affect new reservations only. The nominal eligibility span of a hold-to-payment cycle can approach seven minutes; cleanup, blocked transactions, and unknown lease closure may retain resources longer. Shorter windows limit reservation eligibility but can increase expired checkouts and late-payment compensation, requiring sandbox timing and capacity evidence. These are TicketForge defaults, not SSLCOMMERZ session guarantees. The earlier ten/fifteen-minute recommendation was not accepted; admission-start duration, reacquisition rules, quotas, and provider-session control remain unresolved.

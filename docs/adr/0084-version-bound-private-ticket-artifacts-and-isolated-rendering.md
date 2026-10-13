@@ -1,0 +1,5 @@
+# Deliver version-bound private artifacts through isolated rendering
+
+Status: Accepted. Date: 2026-10-12. Decision: D-084. Formats and objectives are selected; proof coverage, storage, libraries and capacity remain unproved.
+
+Saved files cannot change when credentials are replaced, so Booking delivers private bounded JSON, per-Ticket QR PNG and up-to-four-page Order PDFs bound to the exact enrolled versions, with fresh authorization and complete owner-certified observations at release while Inventory retains gate authority. Durable metadata-only jobs use bounded isolated workers and regenerable encrypted caches, never rotate credentials on retry, and extend D-076 writer/certification coverage to issuance, enrollment, replacement, use and revocation. Review 084 sets five-second eligible cold-job readiness, format-specific latency/size limits and simultaneous staged load targets, accepting pending output and explicit free bandwidth gaps rather than delaying booking or claiming remotely erasable saved artifacts.

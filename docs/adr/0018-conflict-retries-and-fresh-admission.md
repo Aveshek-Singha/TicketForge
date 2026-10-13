@@ -1,0 +1,5 @@
+# Bound conflict retries to one successful hold lifecycle per admission
+
+Status: Accepted. Date: 2026-10-10. Decision: D-018.
+
+Before the first successful hold, allow rate-limited seat-choice retries after known conflict outcomes within the original bounded selection window, without resetting that window. Unknown allocation outcomes require reconciliation or replay of the same request identity; a different request cannot bypass an unresolved allocation. One admission permits at most one successful hold lifecycle; expiry, explicit cancellation, or verified terminal payment failure retires it after safe Inventory closure, and subsequent acquisition needs fresh FIFO admission. Refresh, replacement, and new idempotency keys cannot create another full hold window under retired admission. Browser cancel or failure redirects alone do not prove terminal payment failure, and valid reservations retain protection until authorized closure. This preserves ordinary conflict retries while making reacquisition cost queue priority; selection duration, retry rate and budget, purchase quotas, and any separately approved seat-amendment workflow remain unresolved.

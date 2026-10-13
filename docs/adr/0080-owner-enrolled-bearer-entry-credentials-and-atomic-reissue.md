@@ -1,0 +1,7 @@
+# Enroll bearer venue secrets and serialize reissue against first use
+
+Status: Accepted. Date: 2026-10-12. Decision: D-080. Encoding, encryption, delivery, recovery, compromise fencing and capacity remain unproved.
+
+Group attendees can present per-seat bearer Entry Credentials without customer accounts, accepting that shared and stolen copies are indistinguishable and do not establish attendee identity. Inventory owns exact Ticket/allocation enrollment, secure random secret digests, recoverable encrypted delivery and single-use state; authorized reissue atomically replaces an unused credential version under the same guards as check-in and revocation, without changing Ticket identity or resetting use. Review 080 defines action-bound authorization, same-command recovery, private secret delivery and validation, while narrowly separating this opaque venue credential from D-040's existing asymmetric Waiting Room profile and preserving D-039 refresh rules.
+
+Scoped follow-up: [D-088](0088-mfa-assurance-offline-kits-and-independent-account-recovery.md) requires prior recovery evidence and offline kits, selects customer and privileged MFA profiles, and applies enrolled MFA to sensitive reissue/factor work. Its separate lost-mailbox recovery purpose narrowly replaces missing old-mailbox evidence with saved/UV account evidence and new-mailbox proof; ordinary change rules, original deadlines, stable ownership and domain/financial guards remain.

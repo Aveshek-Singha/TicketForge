@@ -1,0 +1,9 @@
+# Preserve safe write authority and durability through PostgreSQL failover
+
+Status: Accepted. Date: 2026-10-11. Decision: D-031.
+
+Production critical PostgreSQL HA groups need at least three independently hosted data nodes with adequate surviving capacity, strict synchronous behavior, a tested majority-backed HA controller, and verified fencing of the former writer; promote only a candidate preserving acknowledged history on the correct timeline and resume critical success only after an independent synchronous follower is established. This costs compute, storage, quorum infrastructure, and latency, while leadership/durability uncertainty pauses new critical success; a witness is not a data copy, same-host containers do not prove host-loss tolerance, and limited free profiles must disclose their availability gaps without weakening the original requirements. Cancelled/timed-out COMMIT remains unknown and local visibility does not authorize external publication or payment/refund dispatch without a durability barrier; exact barrier, controller/version, fencing, RTO, routing, failure placement, and capacity proof remain unresolved and require fault testing.
+
+Scoped follow-up: [D-093](0093-deployment-profiles-and-independent-production-placement.md) preserves independent data-node and survivor-capacity floors across explicit profiles. Actual host/storage/control placement and complete readiness require evidence; an unproved required durability/fencing guard still fails closed.
+
+Scoped follow-up: [D-094](0094-patroni-etcd-independent-fencing-and-safe-write-readiness.md) selects Patroni/etcd strict control, mandatory independent pre-promotion fencing and quarantined rejoin. Majority election, lease expiry and proxy health alone do not establish safe writer replacement or complete readiness.

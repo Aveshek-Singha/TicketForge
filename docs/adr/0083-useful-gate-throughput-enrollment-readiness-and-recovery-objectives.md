@@ -1,0 +1,5 @@
+# Measure complete gate cycles and protect enrollment and recovery capacity
+
+Status: Accepted. Date: 2026-10-12. Decision: D-083. Targets are selected; capacity, staffing and fault behavior remain unproved.
+
+Fast receipt replay cannot establish useful gate capacity, so Review 083 requires 200 fresh first-use outcomes and matching durable passage reports per second for thirty minutes across 1,000 lanes alongside original 1M/hold traffic and the checkout peak, with separate API p99 below 200 ms and measured scanner-journey p99 below one second in the declared device/network envelope. Eligible enrollment and private retrieval readiness must reach 99.9% within two seconds of original Booking confirmation, retaining the four-seat 4,000-enrollments/s peak and protected owner resource shares. Uncertain lanes are detected within ten seconds, get durable cases within thirty seconds and target production supervisor acknowledgement within two minutes without promising resolution or re-entry; free-profile staffing and infrastructure gaps remain explicit.

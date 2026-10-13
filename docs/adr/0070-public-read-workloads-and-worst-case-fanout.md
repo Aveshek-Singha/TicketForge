@@ -1,0 +1,5 @@
+# Preserve mixed public reads and full-detail fanout at one million users
+
+Status: Accepted. Date: 2026-10-11. Decision: D-070. Capacity remains unmeasured.
+
+Waiting-room admission does not bound anonymous read demand, so require a thirty-minute 1M-active-user mixed profile with nominal budgets of 160,000 overview, 200,000 section, 10,000 catalog and 10,000 search requests per second before jitter, alongside applicable private and owner work. Also preserve a thirty-minute all-detail profile of up to two million section requests per second, including full-body egress, hot sections, cold caches and reconnects; use the original polling/freshness guards, bounded payloads and independent read resources without requiring summary-only browsing. Set public section/overview p99 below 200 ms and bounded catalog/search p99 below 500 ms, with the full workload, wire limits, useful outcomes and generator accounting in D-070 and Review 070; free measurements and extrapolation cannot establish production capacity or thirty-day SLO compliance.

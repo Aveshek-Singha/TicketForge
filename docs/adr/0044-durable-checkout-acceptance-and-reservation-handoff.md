@@ -1,0 +1,5 @@
+# Persist pending checkout before converting its hold
+
+Status: Accepted. Date: 2026-10-11. Decision: D-044.
+
+StartCheckout routes through Booking, which validates the customer and Inventory-owned hold/quote and durably records one CHECKOUT_PENDING Order, trusted quote, Saga intent and stable conversion identity before dispatch or proven HTTP 202 acceptance. Inventory rechecks its entire bundle, ownership, generation and eligibility after locks and atomically converts to a fixed five-minute Payment Reservation with receipt and Outbox; Booking progresses to PAYMENT_PENDING only with matching durable conversion and current eligible reservation evidence, while lost responses retain the same pending Order for reconciliation and do not authorize another payment or unsafe slot release. Payment initiation requires matching proven reservation and remaining budget, with known closure blocking new initiation and in-flight expiry handled through existing late-charge compensation, accepting pending Orders that never convert and preserving original deadlines rather than granting grace from click or acceptance time.

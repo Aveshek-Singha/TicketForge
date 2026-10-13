@@ -1,0 +1,5 @@
+# Keep authentication attempts and physical resources fenced through uncertainty
+
+Status: Accepted. Date: 2026-10-12. Decision: D-092. Enforcement, sizing, safe reopening and recovery capacity remain unproved.
+
+Redis rollback and request timeouts must not create more guesses or duplicate physical capacity, so Auth durably reserves exact password and low-entropy validation attempts under canonical rolling account/purpose/factor guards, retaining unresolved work and conservative execution-age charges across new request IDs. Redis performs bounded admission coordination while finite nonoverlapping worker grants and physical limits protect existing-session, revocation and recovery resources; only proved completion or independent consumer fencing returns a physical slot, and a grant or successful hash cannot authorize credentials. Review 092 requires fenced reconciliation before uncertain gates reopen, counts conservative closure and victim-denial SLO misses, and preserves original recovery, assurance and 1M targets without claiming measured enforcement or free-cloud capacity.

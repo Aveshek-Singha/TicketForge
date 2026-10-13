@@ -1,0 +1,5 @@
+# Publish immutable certified frames through sharded Redis read pools
+
+Status: Accepted. Date: 2026-10-11. Decision: D-058.
+
+Separate mutable data and proof can produce false freshness, while whole-event hash tags concentrate load. Bind bounded section data and exact coverage evidence in immutable frames, initially limited to 512 seats and 64 KiB including proof. Persist guarded publication intent, stage matching bytes and switch the same-slot head under current owner authority; co-locate by occurrence and section, not occurrence alone. Use a separate production read cluster with at least three primaries and an independently hosted replica per primary, then size from measurements. Redis rollback, missing frames or lost placement/control evidence require guarded revalidation or UNKNOWN. See D-058 and Review 058 for publication fencing, script errors, retention, multi-section cuts and unproved resource/failover limits; free profiles disclose shared failure domains without changing the original requirements.

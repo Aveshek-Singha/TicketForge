@@ -1,0 +1,7 @@
+# Preserve mailbox meaning and guard verified contact history
+
+Status: Accepted. Date: 2026-10-12. Decision: D-087. Comparison and reuse policy are selected; parser, migration, transport and recovery behavior remain unproved.
+
+Auth uses one versioned profile that normalizes validated IDNA domains while preserving semantic local-part case/bytes without provider alias transformations, retains internationalized transport requirements and atomically claims one verified canonical binding per realm. Signup activation requires the verifying holder's final password, fences provisional authority and never inherits an unverified registrant's sessions or factors; contact changes retain protected account-bound retired guards without automatic reuse by another account. Review 087 preserves stable account/domain ownership and permits only guarded original-account rebind, accepting indefinite address reuse restrictions while explicitly leaving currently recycled mailbox recovery for the next decision.
+
+Scoped follow-up: [D-088](0088-mfa-assurance-offline-kits-and-independent-account-recovery.md) requires prior recovery evidence and offline kits, selects customer and privileged MFA profiles, and applies enrolled MFA to sensitive reissue/factor work. Its separate lost-mailbox recovery purpose narrowly replaces missing old-mailbox evidence with saved/UV account evidence and new-mailbox proof; ordinary change rules, original deadlines, stable ownership and domain/financial guards remain.

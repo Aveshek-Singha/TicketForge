@@ -1,0 +1,5 @@
+# Require prior recovery evidence and preserve privileged MFA assurance
+
+Status: Accepted. Date: 2026-10-12. Decision: D-088. Assurance and recovery policy are selected; devices, profiles, capacity and operating evidence remain unproved.
+
+Customer daily MFA remains optional with WebAuthn UV or TOTP choices, but verified accounts must acknowledge an offline recovery kit before queue eligibility, and reset requires the fixed mail challenge plus prior enrolled evidence rather than mailbox possession alone. Privileged identities require password plus UV WebAuthn with no automatic weaker fallback, while Auth stages and atomically finalizes recovery without temporary MFA clearing, identity transfer or domain/financial changes. Review 088 narrowly permits lost-mailbox recovery through saved account evidence and new-mailbox proof, requires independent approved privileged recovery after loss of the last trusted factor, and accepts potentially unrecoverable access when no prior evidence survives rather than inventing support ownership proof.

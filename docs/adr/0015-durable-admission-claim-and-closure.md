@@ -1,0 +1,7 @@
+# Claim admission durably and fence delayed allocation before slot reuse
+
+Status: Accepted. Date: 2026-10-10. Decision: D-015.
+
+Waiting Room durably claims an admission lease for one stable checkout identity before allocation, making claim and unused expiry mutually exclusive local transitions. Inventory owns a durable claim guard, checked in the same local transaction as the complete seat bundle allocation. Closing a claimed workflow requires a durable Inventory barrier that rejects delayed allocation commands even if the original request has not arrived; a not-found query or timeout is insufficient. Keep capacity counted during unknown outcomes and release it only after matching durable closure and no remaining active allocation, with idempotent retries and stale-generation rejection. Closure must preserve valid holds and payment reservations, and each service writes only its own data. Coordination and durable work add latency; hold p99 below 200 ms remains required. Transport, exact states, conflict retries, authorization, generations, retention, and timeouts remain unresolved.
+
+Scoped clarification: [D-077](0077-durable-due-work-and-guarded-closure-progress.md) distinguishes ongoing temporary allocation from confirmed terminal entitlement. Matching durable confirmation plus a fence against further allocation under the claim also permits checkout-slot retirement, without freeing confirmed seats or restoring consumed quota. The original delayed-allocation barrier and unknown-outcome safety requirements remain.

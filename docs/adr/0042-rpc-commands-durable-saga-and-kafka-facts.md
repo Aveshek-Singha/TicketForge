@@ -1,0 +1,5 @@
+# Use owner RPC commands with durable Saga recovery and Kafka facts
+
+Status: Accepted. Date: 2026-10-11. Decision: D-042.
+
+Use versioned public REST/JSON APIs and mTLS unary gRPC/Protobuf owner commands/queries, with synchronous guarded admission/allocation transitions and verified owner durability before hold success, without waiting for Kafka publication or CQRS updates. Booking durably records each Saga step, stable command identity and intended payload before owner RPC dispatch, recovers uncertain outcomes through owner queries and guarded delivery on one canonical command path, and reacts to Outbox-published Kafka owner facts under existing consumer and provenance rules; Payment retains exclusive sandbox dispatch/evidence/compensation authority and its stricter provider uncertainty contract. Bound RPC deadlines, queues and attempts, propagate remaining budgets, verify retry/hedging controls, and preserve accepted workflow recovery and original business deadlines after request cancellation, accepting synchronous owner dependencies and asynchronous completion latency without weakening p99, scale, safety or availability requirements.

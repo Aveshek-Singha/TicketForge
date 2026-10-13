@@ -1,0 +1,7 @@
+# Authenticate workloads and enforce authority at each owner
+
+Status: Accepted. Date: 2026-10-11. Decision: D-041.
+
+Use self-hosted SPIFFE/SPIRE X.509 identities with scoped attestation, separate environment trust domains and rotating mTLS service connections, while each owner denies unauthorized caller/action/resource/workflow combinations and requires matching customer or established Saga authority and trusted owner evidence. Use native Kafka TLS and scoped SASL/SCRAM-SHA-512 principals with deny-by-default ACLs, restricted owner publishers and audited replay provenance, plus tested enforcing Kubernetes network policies and owner-scoped storage credentials; payload owner fields, certificate chains and network reachability alone do not establish business permission or owner truth. Check current policy, certificate lifetime and key trust at owner RPC guards, targeting denial of new affected RPC authorization within thirty seconds of durable trusted policy revocation with absolute freshness and fail-closed expiry, while separately measuring Kafka propagation and documenting attestation/control availability, pooled-connection behavior, compromised-owner/root assumptions and free-profile isolation gaps.
+
+Scoped follow-up: [D-082](0082-scoped-gate-authority-and-conservative-passage-recovery.md) applies named MFA staff, enrolled software-key proof, shorter staff session limits and original authority freshness to venue gates. It preserves customer lifetimes and existing owner/financial guards; scanner possession alone grants no additional powers.

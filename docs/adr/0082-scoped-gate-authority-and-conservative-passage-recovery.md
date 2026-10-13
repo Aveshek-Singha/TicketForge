@@ -1,0 +1,7 @@
+# Scope gate authority and recover uncertain passage conservatively
+
+Status: Accepted. Date: 2026-10-12. Decision: D-082. Wire profiles, client persistence, compromise handling and capacity remain unproved.
+
+Named MFA-authenticated staff use occurrence/gate-scoped assignments and enrolled software-key signed requests, with five-minute access, eight-hour absolute sessions, fifteen-minute staff inactivity and thirty-second original authority freshness. Inventory owns durable fenced scanner lanes with one outstanding check-in, while the scanner journals intent and claims its one-time indication before display; repeated or recovered receipts never automatically create another green indication. Passage reports preserve use fences, and ambiguous or not-passed outcomes require scoped supervisor recovery without entry resets or financial powers, accepting paused lanes and manual investigation rather than claiming exactly-once physical passage.
+
+Scoped follow-up: [D-088](0088-mfa-assurance-offline-kits-and-independent-account-recovery.md) requires prior recovery evidence and offline kits, selects customer and privileged MFA profiles, and applies enrolled MFA to sensitive reissue/factor work. Its separate lost-mailbox recovery purpose narrowly replaces missing old-mailbox evidence with saved/UV account evidence and new-mailbox proof; ordinary change rules, original deadlines, stable ownership and domain/financial guards remain.

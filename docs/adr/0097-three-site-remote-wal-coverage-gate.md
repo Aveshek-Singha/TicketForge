@@ -1,0 +1,7 @@
+# Require independently durable remote WAL coverage before critical effects
+
+Status: Accepted. Date: 2026-10-12. Decision: D-097. D-098 selects control placement and quorum-backed membership; receiver lifecycle evidence, storage continuity, exact resource limits and implementation remain pending.
+
+Extend D-032 local synchronous commits with native physical PostgreSQL recovery cohorts at three independent production sites; two of three disk-flushed receivers in one off-region cohort must cover the exact same-history post-COMMIT prefix before protected work, success or external effects can proceed. Capture that prefix on a bounded backend-pinned PgBouncer session-pooling lane after verified COMMIT, keeping ordinary SQL transaction-pooled; preserve exact owner phase guards and existing deadlines, and never treat coverage as permission to repeat work. Two sites block new critical exposure after one is lost until a third complete independent cohort is verified. This adds scoped follow-ups to D-032/D-074/D-094/D-096 without claiming implementation, free-tier availability or measured 1M/latency compliance.
+
+Scoped follow-up: [D-098](0098-three-site-control-quorum-and-membership.md) places the independent three-voter control quorum across the same sites, requires quorum-backed receiver membership/retirement, and preserves exposed-prefix evidence until a replacement cohort is fully verified. Control quorum is separate from the PostgreSQL WAL receiver cohort.

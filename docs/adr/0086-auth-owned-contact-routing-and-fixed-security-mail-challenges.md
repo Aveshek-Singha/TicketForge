@@ -1,0 +1,7 @@
+# Bind contact routing and security mail to current Auth authority
+
+Status: Accepted. Date: 2026-10-12. Decision: D-086. Routing and challenge policy are selected; profile, recovery, transport and capacity remain unproved or unresolved.
+
+Auth owns versioned contact and purpose authority, with original routing evidence no older than thirty seconds, while an email that may already have been submitted retains its recipient/message binding and cannot automatically move to a new address after contact change. Separate protected Auth mail uses fixed fifteen-minute reset or thirty-minute verification/change challenges, same-secret active-flow resend, digest-only redemption, reference-only Kafka work and explicit guarded POST without GET consumption or deadline renewal. Review 086 preserves D-037 mailbox/MFA change rules and sandbox-only capture assurance, narrowly permits challenge delivery through an independently scoped security-mail adapter and accepts paused unknown mail or expired links without changing account/domain ownership.
+
+Scoped follow-up: [D-088](0088-mfa-assurance-offline-kits-and-independent-account-recovery.md) requires prior recovery evidence and offline kits, selects customer and privileged MFA profiles, and applies enrolled MFA to sensitive reissue/factor work. Its separate lost-mailbox recovery purpose narrowly replaces missing old-mailbox evidence with saved/UV account evidence and new-mailbox proof; ordinary change rules, original deadlines, stable ownership and domain/financial guards remain.

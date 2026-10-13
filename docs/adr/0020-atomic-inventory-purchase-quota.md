@@ -1,0 +1,5 @@
+# Enforce four-seat bundles and four-ticket quotas in Inventory
+
+Status: Accepted. Date: 2026-10-10. Decision: D-020.
+
+Use configurable per-occurrence defaults of four seats per bundle and four cumulative confirmed tickets per account, with confirmed plus active reserved units never exceeding the quota. Inventory owns authoritative account/occurrence quota accounting and reserves entitlement in the same local transaction as the complete seat bundle allocation. Hold conversion preserves reserved units, confirmation moves them to confirmed consumption exactly once, and safe unconfirmed closure releases them exactly once. Tabs, replicas, fresh admission, and new idempotency keys cannot bypass the quota; reject oversized bundles without silent partial allocation. Booking, Redis, and Kafka projections may display or precheck entitlement but cannot authorize quota, and refund notification alone cannot restore confirmed purchase entitlement. This restricts large groups and adds account-level contention; policy publication/updates, post-confirmation cancellation/restoration, anti-farming controls, and any distinct group-sales policy remain unresolved.
