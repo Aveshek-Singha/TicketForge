@@ -19,4 +19,4 @@ No unasked scope expansion or false service/native/provider/load/physical proof 
 The exact compiler entry selects go1.27.2 even with an inherited go1.24.1 setting and restores the caller environment. Empty module verification passes.
 The actual absent-engine observation returns ready=false and exit 1. Earlier healthy-engine observations are retained as point-in-time evidence, not continuing availability.
 The Inventory hold ticket now explicitly depends on Waiting Room admission as well as verified Auth and prepared occurrence. Native blockers are [#5, #6, #8] for #7; this prevents a fake admission dependency.
-The whole BK-001 ticket remains open. Final focused/static checks and review follow-ups are recorded before PR publication.
+Final follow-up review of c2506d2 against 70ee911: zero remaining Standards findings and zero actual Spec defects. The last post-restart doctor probe passes; engine stability remains unverified. JSON/PowerShell syntax, document links/fences/entry sizes and diff whitespace checks pass. BK-001 remains open.
