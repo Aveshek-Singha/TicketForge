@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "status": "PARTIAL",
+  "scope": "Principal registry digest observations only; remaining BK-001 pins and compatibility are unresolved",
+  "go": {
+    "external_application_modules": "NOT RESOLVED: no application packages yet",
+    "checksum_service": "sum.golang.org",
+    "version": "1.27.2",
+    "module": "github.com/Aveshek-Singha/TicketForge"
+  },
+  "images": [
+    {
+      "pinned": "golang:1.27.2@sha256:007a316059246276cb214df93950be77837545dc78007a73e0291a4963d5d3bf",
+      "publisher_signature": "UNVERIFIED",
+      "sbom_license_scan": "NOT RUN",
+      "component": "go",
+      "observed_at": "2026-10-13T07:32:16.146028Z",
+      "requested": "golang:1.27.2",
+      "digest": "sha256:007a316059246276cb214df93950be77837545dc78007a73e0291a4963d5d3bf",
+      "platforms": [
+        {
+          "os": "linux",
+          "architecture": "amd64",
+          "digest": "sha256:2d658507a011f1eadc0114d7a421b312b2e77d9042a24036a26e267cc9231677",
+          "source": "https://github.com/docker-library/golang.git#8380885ec449224702b989d8792d2e1470a46e89:1.27/trixie"
+        },
+        {
+          "os": "linux",
+          "architecture": "arm64",
+          "digest": "sha256:a83e961ad968e2e7abc2a59554e356f00c2a270a15fbb39f2c84a4caf13be9c3",
+          "source": "https://github.com/docker-library/golang.git#8380885ec449224702b989d8792d2e1470a46e89:1.27/trixie"
+        }
+      ],
+      "runtime": "NOT RUN"
+    },
+    {
+      "digest": "sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3",
+      "runtime": "NOT RUN",
+      "observed_at": "2026-10-13T07:32:18.5631852Z",
+      "publisher_signature": "UNVERIFIED",
+      "platforms": [
+        {
+          "os": "linux",
+          "architecture": "amd64",
+          "source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+          "digest": "sha256:3cec7eb015ba8adb28139fa5c83b8489cdf0e666e53dfdf20f598ae0cc8739e3"
+        },
+        {
+          "os": "linux",
+          "architecture": "arm64",
+          "source": "https://github.com/docker-library/postgres.git#2603e26e245e558218728ee14e0a42dcb020dc7f:17/trixie",
+          "digest": "sha256:2d46d14f5a051d8c1e4f9d7c07dbeb877ae08150654d69ca32903ccbae4a5421"
+        }
+      ],
+      "sbom_license_scan": "NOT RUN",
+      "component": "postgres",
+      "requested": "postgres:17.11",
+      "pinned": "postgres:17.11@sha256:2d2b8998d31037bf721cfdf764d76ba74171b4fab3431b7f72c27c56ddbdf9e3"
+    },
+    {
+      "component": "redis",
+      "publisher_signature": "UNVERIFIED",
+      "observed_at": "2026-10-13T07:32:16.879588Z",
+      "platforms": [
+        {
+          "source": "https://github.com/redis/docker-library-redis.git#8104e63b5910fda751bf7c038fa297b6fb19ff43:debian",
+          "architecture": "amd64",
+          "os": "linux",
+          "digest": "sha256:6e9101032a2126aeeb4b1e862ac77d2fcf26b831ae37e5ff2e69169f82ddd411"
+        },
+        {
+          "source": "https://github.com/redis/docker-library-redis.git#8104e63b5910fda751bf7c038fa297b6fb19ff43:debian",
+          "architecture": "arm64",
+          "os": "linux",
+          "digest": "sha256:ec87069acc319552b908ba0709277d17a0fe768fcfbdd78b7271d77b4a1bd3ed"
+        }
+      ],
+      "digest": "sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6",
+      "requested": "redis:8.10.2",
+      "sbom_license_scan": "NOT RUN",
+      "runtime": "NOT RUN",
+      "pinned": "redis:8.10.2@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6"
+    },
+    {
+      "runtime": "NOT RUN",
+      "pinned": "apache/kafka:4.2.2@sha256:1213eb3943d551e5ed1fca7a4e109001cee35770b66a02a0c37a8964efe09b69",
+      "requested": "apache/kafka:4.2.2",
+      "sbom_license_scan": "NOT RUN",
+      "platforms": [
+        {
+          "os": "linux",
+          "architecture": "amd64",
+          "digest": "sha256:daa39dc85acd37b148fad74d6b22b60fa5f7fa05048a5c8aa3b654140c63dd58",
+          "source": null
+        },
+        {
+          "os": "linux",
+          "architecture": "arm64",
+          "digest": "sha256:031e51202f27021e6afcc1f55d1d0efd9c54864a96d57506e7c1af7dc97839dd",
+          "source": null
+        }
+      ],
+      "digest": "sha256:1213eb3943d551e5ed1fca7a4e109001cee35770b66a02a0c37a8964efe09b69",
+      "component": "kafka",
+      "observed_at": "2026-10-13T07:32:12.8533155Z",
+      "publisher_signature": "UNVERIFIED"
+    },
+    {
+      "observed_at": "2026-10-13T07:32:14.5205883Z",
+      "pinned": "docker.elastic.co/elasticsearch/elasticsearch:9.5.5@sha256:13b4a40bb095774f5fda635e45fd5677cc6a26565e42b24997b0c72b88e75984",
+      "component": "elasticsearch",
+      "runtime": "NOT RUN",
+      "sbom_license_scan": "NOT RUN",
+      "digest": "sha256:13b4a40bb095774f5fda635e45fd5677cc6a26565e42b24997b0c72b88e75984",
+      "requested": "docker.elastic.co/elasticsearch/elasticsearch:9.5.5",
+      "platforms": [
+        {
+          "digest": "sha256:c40a1fb2bc6976821e5625d2329992a1e9c29df576e5955fdcba02421abf0d3c",
+          "architecture": "amd64",
+          "source": null,
+          "os": "linux"
+        },
+        {
+          "digest": "sha256:35c5cab56b4f04452bf82ab52638d14ada25c1abdeb5abd096157f9d75ec55c5",
+          "architecture": "arm64",
+          "source": null,
+          "os": "linux"
+        }
+      ],
+      "publisher_signature": "UNVERIFIED"
+    }
+  ],
+  "remaining": [
+    "Go application module/transitive sums",
+    "Patroni",
+    "etcd",
+    "PgBouncer",
+    "HAProxy",
+    "pgBackRest",
+    "SPIRE",
+    "Prometheus",
+    "Grafana",
+    "OpenTelemetry Collector",
+    "Jaeger",
+    "Mailpit",
+    "Kubernetes/K3s/OKE",
+    "Terraform and providers",
+    "Helm",
+    "k6",
+    "Protobuf/Buf/sqlc",
+    "GitHub Action commit SHAs",
+    "Artifact/SBOM/signature/security/license verification",
+    "Native and cross-architecture runtime compatibility"
+  ]
+}
