@@ -12,6 +12,7 @@ function Invoke-ToolProbe {
     $taskStart = [Diagnostics.ProcessStartInfo]::new()
     $taskStart.FileName = $taskCommand.Source
     $taskStart.WorkingDirectory = (Get-Location).Path
+    if ($Name -eq 'go') { $taskStart.Environment['GOTOOLCHAIN'] = 'go1.27.2' }
     $taskStart.UseShellExecute = $false
     $taskStart.CreateNoWindow = $true
     $taskStart.RedirectStandardOutput = $true

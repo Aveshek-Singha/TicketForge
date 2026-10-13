@@ -14,7 +14,7 @@ BK-001 is assigned and in progress. No application service or native correctness
 | BK-003 Guarded receipt | [#4](https://github.com/Aveshek-Singha/TicketForge/issues/4) | Open | 002 |
 | BK-004 Verified access | [#5](https://github.com/Aveshek-Singha/TicketForge/issues/5) | Open | 003 |
 | BK-005 Occurrence | [#6](https://github.com/Aveshek-Singha/TicketForge/issues/6) | Open | 003 |
-| BK-006 Seat Bundle | [#7](https://github.com/Aveshek-Singha/TicketForge/issues/7) | Open | 004, 005 |
+| BK-006 Seat Bundle | [#7](https://github.com/Aveshek-Singha/TicketForge/issues/7) | Open | 004, 005, 007 |
 
 ## Admission, money and read path
 | Work | Ticket | State | Blocked by BK |
