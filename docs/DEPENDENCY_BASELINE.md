@@ -1,5 +1,11 @@
 # Dependency and reproducible build baseline
 
+## Bootstrap progress — 2026-10-13
+Go 1.27.2 now runs through Go's checksum-verified toolchain download. go.mod requires this minimum; scripts/go.ps1 and the doctor Go probe force the exact compiler. The global 1.24.1 install was not overwritten.
+The Linux Docker engine now responds. The doctor command reports exact observed tooling and retains native booking, physical recovery and full-scale capacity as unverified.
+Principal image digest observations are recorded separately; remaining modules, actions, providers, tools, scans and native compatibility remain open in BK-001.
+The project has no application packages or external Go modules yet. go mod verify succeeds for this empty dependency set; this is not a service build or native test.
+
 ## Status and pin acceptance
 Go 1.27.2 is accepted as D-103; client/platform defaults are approved as D-104. No install, compile or runtime compatibility check was performed during review. Record implementation evidence separately.
 BK-001 resolves exact modules/transitive sums, image/provider/action digests and source/signature/license evidence into a committed manifest before native component work.

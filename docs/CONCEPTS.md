@@ -1682,3 +1682,10 @@ Why we use it: Fresh implementation sessions can take ready work without losing 
 Example in this project: BK-008 joins atomic Inventory entitlement with durable Waiting Room claims; both must be ready.
 Location in code: GitHub issues linked in IMPLEMENTATION_STATUS.md; no application implementation exists yet.
 Related decisions: D-104; ask-matt routes through to-spec, to-tickets, implement, TDD and code review.
+
+## Minimum Go version versus selected toolchain
+Definition: The go directive rejects older compilers. A specific GOTOOLCHAIN value selects the exact compiler for a command.
+Why we use it: Reproducible builds must not silently use another installed compiler.
+Example in this project: scripts/go.ps1 forces go1.27.2 and then restores the caller's prior environment.
+Location in code: scripts/go.ps1 and scripts/doctor.ps1.
+Related decisions: D-103, D-104. Official source: https://go.dev/doc/toolchain.
